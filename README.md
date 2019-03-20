@@ -1,4 +1,4 @@
-![KSG Score](https://ksg-media.de/logo.png "KSG Score")
+![KSG Score](https://www.ksg-media.de/logo.png "KSG Score")
 
 # KSG Score Kanupolo
 
