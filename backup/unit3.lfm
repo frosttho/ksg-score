@@ -1,13 +1,13 @@
 object Form3: TForm3
-  Left = 655
+  Left = 702
   Height = 344
-  Top = 347
+  Top = 427
   Width = 587
   BorderStyle = bsDialog
   Caption = 'About'
   ClientHeight = 344
   ClientWidth = 587
-  FormStyle = fsMDIForm
+  FormStyle = fsStayOnTop
   Position = poScreenCenter
   LCLVersion = '1.8.2.0'
   object Image1: TImage
