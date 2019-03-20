@@ -2,7 +2,7 @@
 
 # ksg SCORE
 
-ein Kanupolo-Scoreboard-Client mit eigenem Design für die Playout-Software CasparCG.
+ein Kanupolo-Scoreboard-Client mit eigenem Design für die Playout-Software CasparCG (https://github.com/CasparCG/server).
 
 ## Funktionen
 
