@@ -2,7 +2,7 @@
 
 # KSG Score Kanupolo
 
-ein Kanupolo-Scoreboard-Client für die Playout-Software CASPAR CG.
+ein Kanupolo-Scoreboard-Client für die Playout-Software CasparCG.
 
 ## Status
 
