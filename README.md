@@ -6,18 +6,19 @@ ein Kanupolo-Scoreboard-Client mit eigenem Design für die Playout-Software Casp
 
 ## Funktionen
 
-* Lower Thirds zweispaltig
+* Lower Thirds zweizeilig
 * Lower Third einzeilig
 * Spielstandsanzeige mit Uhr
-* Anlegen einer Timeline mit verschiedenen Elementen
 * Übersicht über kommende Begegnungen
 * Einblendung der kommenden Begegnung mit Vereinswimpeln / -logos
+* Anlegen einer Timeline mit verschiedenen Elementen
 * Schnittstelle für die Spielpläne der Android-App "Canoe Polo Scheduler"
 
 
 ## Status
 
-Diese Software ist derzeit nicht im Ansatz funktionsfähig...
+Diese Software ist derzeit kaum im Ansatz funktionsfähig.
+Die erste Verbidung zum Caspar-Server ist funktionstüchtig. Es fehlen noch Grafiken und die Einbindung dieser Grafiken in den Client.
 
 
 
