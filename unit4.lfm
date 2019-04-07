@@ -1209,7 +1209,7 @@ object Form4: TForm4
     Top = 85
     Width = 112
     TabOrder = 0
-    Text = '192.168.2.4'
+    Text = '127.0.0.1'
   end
   object Edit2: TEdit
     Left = 320
@@ -1217,7 +1217,7 @@ object Form4: TForm4
     Top = 85
     Width = 56
     TabOrder = 1
-    Text = '3250'
+    Text = '5250'
   end
   object Label3: TLabel
     Left = 288

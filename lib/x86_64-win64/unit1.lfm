@@ -7,6 +7,7 @@ object Form1: TForm1
   ClientHeight = 781
   ClientWidth = 1404
   Menu = MainMenu1
+  OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.8.2.0'
   object Image1: TImage
@@ -1378,6 +1379,7 @@ object Form1: TForm1
       Top = 95
       Width = 88
       Caption = 'hinzufügen'
+      OnClick = Button6Click
       TabOrder = 2
     end
   end
@@ -1390,21 +1392,14 @@ object Form1: TForm1
     ClientHeight = 309
     ClientWidth = 531
     TabOrder = 2
-    object ListBox1: TListBox
-      Left = 8
-      Height = 256
-      Top = 8
-      Width = 503
-      ItemHeight = 0
-      TabOrder = 0
-    end
     object Button4: TButton
       Left = 8
       Height = 33
       Top = 271
       Width = 200
       Caption = 'EINBLENDEN'
-      TabOrder = 1
+      OnClick = Button4Click
+      TabOrder = 0
     end
     object Button5: TButton
       Left = 216
@@ -1412,7 +1407,8 @@ object Form1: TForm1
       Top = 272
       Width = 200
       Caption = 'AUSBLENDEN'
-      TabOrder = 2
+      OnClick = Button5Click
+      TabOrder = 1
     end
     object Button7: TButton
       Left = 455
@@ -1426,7 +1422,25 @@ object Form1: TForm1
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
       ParentFont = False
+      TabOrder = 2
+    end
+    object ListView2: TListView
+      Left = 8
+      Height = 256
+      Top = 8
+      Width = 503
+      Columns = <      
+        item
+          Caption = 'Element'
+          Width = 400
+        end      
+        item
+          Caption = 'CG-Code'
+          Width = 90
+        end>
+      RowSelect = True
       TabOrder = 3
+      ViewStyle = vsReport
     end
   end
   object GroupBox4: TGroupBox
@@ -1452,6 +1466,7 @@ object Form1: TForm1
       Top = 80
       Width = 91
       Caption = 'hinzufügen'
+      OnClick = Button8Click
       TabOrder = 1
     end
   end
@@ -1491,7 +1506,7 @@ object Form1: TForm1
         item
           AutoSize = True
           Caption = 'Feld'
-          Width = 37
+          Width = 25
         end      
         item
           AutoSize = True
@@ -1732,7 +1747,7 @@ object Form1: TForm1
         Width = 170
       end    
       item
-        Text = '192.168.0.5'
+        Text = '127.0.0.1'
         Width = 120
       end    
       item
@@ -1835,8 +1850,9 @@ object Form1: TForm1
   end
   object TCP: TIdTCPClient
     ConnectTimeout = 0
+    Host = '127.0.0.1'
     IPVersion = Id_IPv4
-    Port = 0
+    Port = 5250
     ReadTimeout = -1
     left = 296
     top = 24

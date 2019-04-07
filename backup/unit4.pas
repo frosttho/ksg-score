@@ -46,7 +46,7 @@ begin
     Unit1.ipaddr := Edit1.Text;
     Unit1.port := Edit2.Text;
     Form1.TCP.Host := Unit1.ipaddr;
-    Form1.TCP.Port := Unit1.port;
+    Form1.TCP.Port := StrToInt(Unit1.port);
     Form1.StatusBar1.Panels.Items[1].Text := Unit1.ipaddr + ':' + Unit1.port;
     Form4.Close;
   end

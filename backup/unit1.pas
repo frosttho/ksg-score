@@ -45,6 +45,7 @@ type
     GroupBox7: TGroupBox;
     IdHTTP1: TIdHTTP;
     Image4: TImage;
+    ListView2: TListView;
     ProgressBar1: TProgressBar;
     TCP: TIdTCPClient;
     Image1: TImage;
@@ -59,7 +60,6 @@ type
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
-    ListBox1: TListBox;
     ListView1: TListView;
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
@@ -80,8 +80,13 @@ type
     procedure BitBtn1Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
     procedure Button12Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure CheckBox1Change(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure MenuItem10Click(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
@@ -111,7 +116,7 @@ function Mannschaftsname(id: String): String;
 begin
  if id <> '0' then
  begin
-   result := stringreplace(ServerTeams[StrToInt(id)-1,1],' ','',[rfReplaceAll]);
+   result := trim(ServerTeams[StrToInt(id)-1,1]);
  end
  else
  begin
@@ -154,6 +159,11 @@ begin
     //Hier die Schleife für Aktualisierung von Remote-Timer einfügen
 
   end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+
 end;
 
 procedure TForm1.Button10Click(Sender: TObject);
@@ -227,16 +237,46 @@ procedure TForm1.Button12Click(Sender: TObject);
 begin
   if Button12.Caption = 'Verbinden' then
   begin
+    TCP.Connect;
     Button12.Caption := 'Trennen';
     Image4.Picture.LoadFromFile('./gruen.png');
     Form1.StatusBar1.Panels.Items[0].Text := 'CasparCG: verbunden';
   end
   else if Button12.Caption = 'Trennen' then
   begin
+    TCP.Disconnect;
     Button12.Caption := 'Verbinden';
     Image4.Picture.LoadFromFile('./rot.png');
     Form1.StatusBar1.Panels.Items[0].Text := 'CasparCG: nicht verbunden';
   end;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  if ListView2.ItemIndex <> -1 then
+  begin
+    TCP.Socket.WriteLn(ListView2.Items.Item[ListView2.ItemIndex].SubItems[0]);
+  end;
+
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+  TCP.Socket.WriteLn('CG 1-20 STOP 1');
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+var
+  item: TListItem;
+begin
+  item := ListView2.Items.Add;
+  item.Caption := 'L3 2 | ' + Edit3.Text + ' | ' + Edit4.Text;
+  item.SubItems.Add('CG 1-20 ADD 1 "LOW3RD_2_50FPS" 1 "<templateData><componentData id=\"f0\"><data id=\"text\" value=\"' + Edit3.Text + '\"/></componentData><componentData id=\"f1\"><data id=\"text\" value=\"' + Edit4.Text + '\"/></componentData></templateData>"\r\n');
+end;
+
+procedure TForm1.Button8Click(Sender: TObject);
+begin
+
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);
