@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 332
+  Left = 320
   Height = 801
-  Top = 184
+  Top = 150
   Width = 1404
   Caption = 'Deutsche Kanupolo-Meisterschaften 2019'
   ClientHeight = 781
@@ -1667,6 +1667,7 @@ object Form1: TForm1
       Top = 248
       Width = 251
       Caption = 'hinzufügen'
+      OnClick = Button11Click
       TabOrder = 5
     end
     object GroupBox7: TGroupBox
@@ -1830,6 +1831,10 @@ object Form1: TForm1
       object MenuItem5: TMenuItem
         Caption = 'Spielplanserver konfigurieren'
         OnClick = MenuItem5Click
+      end
+      object MenuItem11: TMenuItem
+        Caption = 'Caspar-Templates verwalten'
+        OnClick = MenuItem11Click
       end
       object MenuItem4: TMenuItem
         Caption = 'Teams verwalten'

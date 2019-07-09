@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   Spin, ExtCtrls, Menus, ComCtrls, Buttons, IdTCPClient, IdHTTP, fpjson,
-  jsonparser, Unit2, Unit3, Unit4, Unit5;
+  jsonparser, Unit2, Unit3, Unit4, Unit5, Unit6;
 
 type
 
@@ -46,6 +46,7 @@ type
     IdHTTP1: TIdHTTP;
     Image4: TImage;
     ListView2: TListView;
+    MenuItem11: TMenuItem;
     ProgressBar1: TProgressBar;
     TCP: TIdTCPClient;
     Image1: TImage;
@@ -79,6 +80,7 @@ type
     ToggleBox2: TToggleBox;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
+    procedure Button11Click(Sender: TObject);
     procedure Button12Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
@@ -88,6 +90,7 @@ type
     procedure CheckBox1Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure MenuItem10Click(Sender: TObject);
+    procedure MenuItem11Click(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
@@ -102,7 +105,7 @@ type
 var
   Form1: TForm1;
   ipaddr, port, spielplanserver: string;
-  jsondataTeams, jsondataGames: TJSONData;
+  jsonSettings, jsondataTeams, jsondataGames: TJSONData;
   ServerTeams: array of array[0..1] of String;
 
 implementation
@@ -178,6 +181,15 @@ begin
   end;
 end;
 
+procedure TForm1.Button11Click(Sender: TObject);
+var
+  item: TListItem;
+begin
+  item := ListView2.Items.Add;
+  item.Caption := 'Begeg | ' + ComboBox1.Text + ' | ' + ComboBox2.Text;
+  item.SubItems.Add('CG 1-20 ADD 1 "LOW3RD_2_50FPS" 1 "<templateData><componentData id=\"f0\"><data id=\"text\" value=\"' + ComboBox1.Text + '\"/></componentData><componentData id=\"f1\"><data id=\"text\" value=\"' + ComboBox2.Text + '\"/></componentData></templateData>"\r\n');
+end;
+
 procedure TForm1.BitBtn1Click(Sender: TObject);
 var
   http: TIdHTTP;
@@ -187,10 +199,26 @@ var
   jsonitem: TJSONData;
   jsonobject: TJSONObject;
 begin
-  URL := spielplanserver + '/getTeams.php';
-  //Showmessage(URL);
   http := TIdHttp.Create();
   http.ReadTimeout := 5000;
+
+
+  URL := spielplanserver + '/getSettings.php';
+  try
+    http.Request.ContentType := 'application/json';
+    http.Request.Accept := 'application/json';
+    resp := http.Get(URL);
+    jsonSettings := getJSON(resp);
+  finally
+  end;
+  jsonitem := jsonSettings.Items[0];
+  jsonobject := TJSONObject(jsonitem);
+  Groupbox5.Caption := 'Spielplan: ' + jsonobject.Get('name');
+
+
+
+
+  URL := spielplanserver + '/getTeams.php';
   try
     http.Request.ContentType := 'application/json';
     http.Request.Accept := 'application/json';
@@ -275,8 +303,12 @@ begin
 end;
 
 procedure TForm1.Button8Click(Sender: TObject);
+var
+  item: TListItem;
 begin
-
+  item := ListView2.Items.Add;
+  item.Caption := 'L3 1 | ' + Edit5.Text;
+  item.SubItems.Add('CG 1-20 ADD 1 "LOW3RD_1_50FPS" 1 "<templateData><componentData id=\"f0\"><data id=\"text\" value=\"' + Edit5.Text + '\"/></componentData></templateData>"\r\n');
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);
@@ -317,6 +349,11 @@ begin
     ComboBox1.Items.Add(Form2.ListView1.Items.Item[i].Caption);
     ComboBox2.Items.Add(Form2.ListView1.Items.Item[i].Caption);
   end;
+end;
+
+procedure TForm1.MenuItem11Click(Sender: TObject);
+begin
+  Form6.Show;
 end;
 
 procedure TForm1.MenuItem1Click(Sender: TObject);

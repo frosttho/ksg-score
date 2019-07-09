@@ -1,0 +1,19 @@
+﻿{"frames": {
+
+"LowerThirdzweizeilig_00012":
+{
+	"frame": {"x":0,"y":0,"w":1920,"h":1080},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1920,"h":1080},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "19.1.0.349",
+	"image": "Lowerthird zweizeilig_50fps_HTML5 Canvas_atlas_10.png",
+	"format": "RGB8",
+	"size": {"w":2048,"h":2048},
+	"scale": "1"
+}
+}

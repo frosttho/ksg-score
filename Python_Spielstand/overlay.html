@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>AJAX-Beispiel</title>
+	<style>
+		body {
+			text-align: center;
+		}
+	</style>
+	<script>
+	function ajaxreload() {
+		if (window.XMLHttpRequest) {
+		  // AJAX nutzen mit IE7+, Chrome, Firefox, Safari, Opera
+		  xmlhttp=new XMLHttpRequest();
+		} else {
+		  // AJAX mit IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function() {
+			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				document.getElementById("sicherheitshinweis").innerHTML=xmlhttp.responseText;
+			}
+		}
+		xmlhttp.open("GET","file:///D:/Thomas/Documents/Programmieren/KSG-score/ksg-score/Python_Spielstand/clock.html",true);
+		xmlhttp.send();
+	}
+	
+	window.setInterval(ajaxreload,1000)
+	</script>
+<head>
+
+<body>
+
+<span style="font-family: Calibri; size: 22; color: #245878; text-align: center;" id="sicherheitshinweis">hier kommt dann der AJAX-Inhalt</span>
+</body>
+</html>
