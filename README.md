@@ -24,5 +24,5 @@ Die erste Verbidung zum Caspar-Server ist funktionstüchtig. Es fehlen noch Graf
 
 ## Lizenz
 
-Derzeit noch unter keiner Open Source-Lizenz. Das ändert sich mit der ersten Alpha.
+Die Software steht unter einer mordifizierten Variante der BSD-Lizenz.
 
