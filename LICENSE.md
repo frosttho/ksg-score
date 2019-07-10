@@ -1,4 +1,4 @@
-BSD 3-Clause License
+## based on BSD 3-Clause License
 
 Copyright (c) 2019, KSG Media - Thomas Frost
 All rights reserved.
