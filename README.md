@@ -24,5 +24,5 @@ Die erste Verbidung zum Caspar-Server ist funktionstüchtig. Es fehlen noch Graf
 
 ## Lizenz
 
-Die Software steht unter einer mordifizierten Variante der BSD-Lizenz.
+Die Software steht unter einer [modifizierten Variante der BSD-Lizenz](https://github.com/frosttho/ksg-score/blob/master/LICENSE.md).
 
