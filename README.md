@@ -17,9 +17,13 @@ ein Kanupolo-Scoreboard-Client mit eigenem Design für die Playout-Software Casp
 
 ## Status
 
-Diese Software ist derzeit kaum im Ansatz funktionsfähig.
-Die erste Verbidung zum Caspar-Server ist funktionstüchtig. Es fehlen noch Grafiken und die Einbindung dieser Grafiken in den Client.
+Diese Software ist derzeit im Grunde funktionsfähig.
+Dies beinhaltet die Verbidung zum Caspar-Server. Es fehlen noch die meisten eigenen Grafiken und die Einbindung dieser Grafiken in den Client.
 
+
+## Installation
+
+ksg SCORE kann über den [hier](https://github.com/frosttho/ksg-score/blob/master/setup.exe) verfügbaren 64Bit-Installer installiert werden.
 
 
 ## Lizenz
