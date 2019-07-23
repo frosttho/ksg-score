@@ -1206,7 +1206,7 @@ object Form5: TForm5
   object Edit1: TEdit
     Left = 104
     Height = 23
-    Top = 80
+    Top = 120
     Width = 160
     TabOrder = 0
     Text = 'fisslegang.de'

@@ -367,7 +367,6 @@ begin
 end;
 
 procedure TForm1.MenuItem4Click(Sender: TObject);
-//Öffnen des Verwalter-Forms
 begin
   Form2.Show;
 end;

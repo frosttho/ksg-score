@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 320
+  Left = 345
   Height = 801
-  Top = 150
+  Top = 172
   Width = 1404
   Caption = 'Deutsche Kanupolo-Meisterschaften 2019'
   ClientHeight = 781

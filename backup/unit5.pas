@@ -57,6 +57,7 @@ begin
     protokoll := 'http://';
   end;
   Unit1.spielplanserver := protokoll + Edit1.Text + ':' + Edit2.Text;
+  Form5.Close;
 end;
 
 end.

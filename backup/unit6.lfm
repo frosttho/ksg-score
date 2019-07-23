@@ -1172,11 +1172,11 @@ object Form6: TForm6
     Stretch = True
   end
   object Label2: TLabel
-    Left = 216
+    Left = 168
     Height = 23
     Top = 16
-    Width = 128
-    Caption = 'Teams verwalten'
+    Width = 215
+    Caption = 'Caspar-Templates verwalten'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -19
     Font.Name = 'Arial Narrow'
@@ -1188,7 +1188,7 @@ object Form6: TForm6
   end
   object ListView1: TListView
     Left = 32
-    Height = 272
+    Height = 264
     Top = 56
     Width = 488
     Columns = <    
@@ -1213,8 +1213,36 @@ object Form6: TForm6
       656765676E756E67FFFFFFFFFFFFFFFFFFFFFFFF000000000A00000053636F72
       65626F617264FFFFFFFFFFFFFFFF
     }
+    ReadOnly = True
     RowSelect = True
     TabOrder = 0
     ViewStyle = vsReport
+    OnDblClick = ListView1DblClick
+  end
+  object Edit1: TEdit
+    Left = 32
+    Height = 23
+    Top = 336
+    Width = 184
+    Enabled = False
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 240
+    Height = 23
+    Top = 336
+    Width = 208
+    Enabled = False
+    TabOrder = 2
+  end
+  object Button1: TButton
+    Left = 456
+    Height = 23
+    Top = 336
+    Width = 64
+    Caption = 'OK'
+    Enabled = False
+    OnClick = Button1Click
+    TabOrder = 3
   end
 end

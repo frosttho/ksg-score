@@ -182,8 +182,12 @@ begin
 end;
 
 procedure TForm1.Button11Click(Sender: TObject);
+var
+  item: TListItem;
 begin
-
+  item := ListView2.Items.Add;
+  item.Caption := 'Begeg | ' + ComboBox1.Text + ' | ' + ComboBox2.Text;
+  item.SubItems.Add('CG 1-20 ADD 1 "LOW3RD_2_50FPS" 1 "<templateData><componentData id=\"f0\"><data id=\"text\" value=\"' + ComboBox1.Text + '\"/></componentData><componentData id=\"f1\"><data id=\"text\" value=\"' + ComboBox2.Text + '\"/></componentData></templateData>"\r\n');
 end;
 
 procedure TForm1.BitBtn1Click(Sender: TObject);
@@ -363,7 +367,6 @@ begin
 end;
 
 procedure TForm1.MenuItem4Click(Sender: TObject);
-//Öffnen des Verwalter-Forms
 begin
   Form2.Show;
 end;
