@@ -23,7 +23,7 @@ Dies beinhaltet die Verbidung zum Caspar-Server. Es fehlen noch die meisten eige
 
 ## Installation
 
-ksg SCORE kann über den [hier](https://github.com/frosttho/ksg-score/blob/master/setup.exe) verfügbaren 64Bit-Installer installiert werden.
+ksg SCORE kann über den [hier](https://github.com/frosttho/ksg-score/raw/master/setup.exe) verfügbaren 64Bit-Installer installiert werden.
 
 
 ## Lizenz
